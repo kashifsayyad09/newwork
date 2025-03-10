@@ -1,11 +1,16 @@
+# Use the official PHP 8.2 Apache image
 FROM php:8.2-apache
 
-RUN echo "ionix.in localhost" >> /etc/apache2/apache2.conf
+# Set the maintainer information
+LABEL maintainer="Kashif"
 
-WORKDIR /myapp
+# Enable Apache mod_rewrite
+RUN a2enmod rewrite
 
-COPY . .
+# Set document root (optional)
+WORKDIR /var/www/html
 
 EXPOSE 80
 
-CMD ["apachectl", "-D", "FOREGROUND"]
+# Start Apache in the foreground
+CMD ["apache2-foreground"]
