@@ -1,5 +1,0 @@
-FROM php:8.2-apache
-WORKDIR /newapp
-COPY . .
-EXPOSE 80
-CMD ["/usr/sbin/apache2ctl", "-D", "FOREGROUND"]
