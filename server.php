@@ -8,7 +8,7 @@
 	$_SESSION['success'] = "";
 
 
-	$db = mysqli_connect('localhost', 'root', '', 'Logina');
+	$db = mysqli_connect('mysql', 'root', '123456789', 'Logina');
 
 
 	if (isset($_POST['reg_user'])) {
